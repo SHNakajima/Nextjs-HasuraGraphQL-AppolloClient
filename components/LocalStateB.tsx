@@ -3,8 +3,6 @@ import { todoVar } from '../cache'
 import { useReactiveVar } from '@apollo/client'
 import Link from 'next/link'
 
-// state の取得＆表示を行うコンポーネント
-
 export const LocalStateB: VFC = () => {
   const todos = useReactiveVar(todoVar)
   return (

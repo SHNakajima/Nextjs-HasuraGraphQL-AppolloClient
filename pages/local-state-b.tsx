@@ -4,7 +4,7 @@ import { Layout } from '../components/Layout'
 
 const LocalStatePageB: VFC = () => {
   return (
-    <Layout title="Local State B">
+    <Layout title="Local State A">
       <LocalStateB />
     </Layout>
   )

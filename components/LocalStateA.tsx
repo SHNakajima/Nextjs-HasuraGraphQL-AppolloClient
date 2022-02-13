@@ -12,8 +12,6 @@ export const LocalStateA: VFC = () => {
     setInput('')
   }
 
-  // state の更新を行うコンポーネント
-
   return (
     <>
       <p className="mb-3 font-bold">makeVar</p>

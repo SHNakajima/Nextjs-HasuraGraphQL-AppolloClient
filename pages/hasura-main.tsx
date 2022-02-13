@@ -6,14 +6,12 @@ import { GetUsersQuery } from '../types/generated/graphql'
 import { Layout } from '../components/Layout'
 
 const FetchMain: VFC = () => {
-  const { data, error } = useQuery<GetUsersQuery>(GET_USERS)
-  // const { data, error } = useQuery<GetUsersQuery>(GET_USERS, {
-  //   //fetchPolicy: 'network-only',
-  //   fetchPolicy: 'cache-and-network',
-  //   //fetchPolicy: 'cache-first',
-  //   //fetchPolicy: 'no-cache',
-  // })
-  {console.dir(error)}
+  const { data, error } = useQuery<GetUsersQuery>(GET_USERS, {
+    //fetchPolicy: 'network-only',
+    fetchPolicy: 'cache-and-network',
+    //fetchPolicy: 'cache-first',
+    //fetchPolicy: 'no-cache',
+  })
   if (error)
     return (
       <Layout title="Hasura fetchPolicy">
@@ -23,8 +21,6 @@ const FetchMain: VFC = () => {
   return (
     <Layout title="Hasura fetchPolicy">
       <p className="mb-6 font-bold">Hasura main page</p>
-
-      {console.dir(data)}
 
       {data?.users.map((user) => {
         return (
